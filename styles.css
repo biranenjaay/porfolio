@@ -704,7 +704,15 @@ footer {
   .about-grid, .skills-grid, .projects-grid, .contact-wrap { grid-template-columns: 1fr; }
   .project-card.featured { grid-template-columns: 1fr; }
 }
-
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Évite les espaces vides sous l'image */
+}
+.hero-photo {
+  position: relative;
+  z-index: 5; /* Force la photo à passer au premier plan */
+}
 @media (max-width: 768px) {
   .hamburger { display: flex; }
   
@@ -739,4 +747,7 @@ footer {
   html { font-size: 14px; }
   .section-title { font-size: 1.8rem; }
   .certs-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 1024px) {
+  .hero-photo, .about-photo-wrap { display: none; } /* <--- CETTE LIGNE CACHE VOS PHOTOS */
 }
